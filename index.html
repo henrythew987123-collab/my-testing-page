@@ -18,6 +18,24 @@
       color: #fff;
       padding: 70px 20px;
       text-align: center;
+      position: relative;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .lang-switch button {
+      background: transparent;
+      border: 1px solid #cbd5e1;
+      color: #cbd5e1;
+      padding: 6px 12px;
+      margin-left: 6px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
     }
 
     header h1 {
@@ -60,24 +78,13 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-    }
-
-    .project-desc {
+    .project-desc,
+    .form-wrapper {
       background: #fff;
       padding: 36px;
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0,0,0,.08);
       line-height: 1.7;
-    }
-
-    .form-wrapper {
-      background: #fff;
-      padding: 36px;
-      border-radius: 16px;
-      box-shadow: 0 12px 35px rgba(0,0,0,.1);
     }
 
     form input, form textarea {
@@ -113,64 +120,113 @@
 <body>
 
 <header>
-  <h1>Permas Heights</h1>
-  <p>新山 CIQ 核心地段 · 为新加坡工作的马来西亚人而设</p>
-  <a href="#contact" class="btn">预约看房 / 询问更多</a>
+  <div class="lang-switch">
+    <button onclick="setLang('zh')">中文</button>
+    <button onclick="setLang('en')">English</button>
+  </div>
+
+  <h1 data-zh="Permas Heights" data-en="Permas Heights"></h1>
+  <p
+    data-zh="新山 CIQ 核心地段 · 为新加坡工作的马来西亚人而设"
+    data-en="Prime CIQ Location in Johor Bahru · Designed for Malaysians Working in Singapore">
+  </p>
+  <a href="#contact" class="btn"
+     data-zh="预约看房 / 询问更多"
+     data-en="Book a Viewing / Enquire Now">
+  </a>
 </header>
 
 <section class="features">
   <div class="card">
-    <h3>🚆 靠近 CIQ</h3>
-    <p>每日通勤更高效，适合在新加坡工作的族群。</p>
+    <h3 data-zh="🚆 靠近 CIQ" data-en="🚆 Close to CIQ"></h3>
+    <p data-zh="每日通勤更高效，适合在新加坡工作的族群。"
+       data-en="Efficient daily commute, ideal for those working in Singapore."></p>
   </div>
+
   <div class="card">
-    <h3>💰 新币收入 · 马币资产</h3>
-    <p>自住与投资兼顾，长期价值稳定。</p>
+    <h3 data-zh="💰 新币收入 · 马币资产" data-en="💰 SGD Income · MYR Asset"></h3>
+    <p data-zh="自住与投资兼顾，长期价值稳定。"
+       data-en="Suitable for own stay and investment with long-term value."></p>
   </div>
+
   <div class="card">
-    <h3>🏢 高需求地段</h3>
-    <p>适合出租、转售与长期持有。</p>
+    <h3 data-zh="🏢 高需求地段" data-en="🏢 High Demand Location"></h3>
+    <p data-zh="适合出租、转售与长期持有。"
+       data-en="Ideal for rental, resale, and long-term holding."></p>
   </div>
+
   <div class="card">
-    <h3>🛡 官方项目</h3>
-    <p>合法开发，流程清晰，不夸大、不误导。</p>
+    <h3 data-zh="🛡 官方项目" data-en="🛡 Official Development"></h3>
+    <p data-zh="合法开发，流程清晰，不夸大、不误导。"
+       data-en="Legitimate development with transparent process."></p>
   </div>
 </section>
 
 <section>
   <div class="project-desc">
-    <h2>项目简介</h2>
-    <p>
-      Permas Heights 位于新山核心区域，靠近 CIQ，
-      是专为在新加坡工作的马来西亚人打造的高品质公寓项目。
+    <h2 data-zh="项目简介" data-en="Project Overview"></h2>
+    <p
+      data-zh="Permas Heights 位于新山核心区域，靠近 CIQ，是专为在新加坡工作的马来西亚人打造的高品质公寓项目。"
+      data-en="Permas Heights is a premium residential development located near CIQ in Johor Bahru, designed for Malaysians working in Singapore.">
     </p>
-    <p>
-      项目结合通勤便利性与居住舒适度，
-      适合首次置业、自住升级及长期投资。
+    <p
+      data-zh="项目结合通勤便利性与居住舒适度，适合首次置业、自住升级及长期投资。"
+      data-en="It combines commuting convenience with living comfort, suitable for first-time buyers, own stay, and long-term investment.">
     </p>
   </div>
 </section>
 
 <section id="contact">
   <div class="form-wrapper">
-    <h2>预约看房 / 询问更多信息</h2>
-    <p>填写以下资料，我们将尽快与您联系。</p>
+    <h2 data-zh="预约看房 / 询问更多信息" data-en="Book a Viewing / Enquiry"></h2>
+    <p data-zh="填写以下资料，我们将尽快与您联系。"
+       data-en="Fill in your details and we will contact you shortly."></p>
 
-    <!-- 表单：后续可接 Email / Backend -->
-<form action="https://formspree.io/f/xpqqqbrr" method="POST">
-  <input type="text" name="name" placeholder="姓名" required>
-  <input type="tel" name="phone" placeholder="联系电话 / WhatsApp" required>
-  <input type="email" name="email" placeholder="电邮" required>
-  <textarea name="message" rows="4" placeholder="想了解的内容（可选）"></textarea>
-  <button type="submit">提交咨询</button>
-</form>
+    <form action="https://formspree.io/f/xpqqqbrr" method="POST">
+      <input type="text" name="name"
+        data-zh-placeholder="姓名"
+        data-en-placeholder="Name" required>
 
+      <input type="tel" name="phone"
+        data-zh-placeholder="联系电话 / WhatsApp"
+        data-en-placeholder="Phone / WhatsApp" required>
+
+      <input type="email" name="email"
+        data-zh-placeholder="电邮"
+        data-en-placeholder="Email" required>
+
+      <textarea name="message" rows="4"
+        data-zh-placeholder="想了解的内容（可选）"
+        data-en-placeholder="Your enquiry (optional)"></textarea>
+
+      <button type="submit"
+        data-zh="提交咨询"
+        data-en="Submit Enquiry">
+      </button>
+    </form>
   </div>
 </section>
 
-<footer>
-  © 2026 Permas Heights. All rights reserved.
+<footer data-zh="© 2026 Permas Heights. 版权所有。"
+        data-en="© 2026 Permas Heights. All rights reserved.">
 </footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+
+    document.querySelectorAll('input, textarea').forEach(el => {
+      const ph = el.getAttribute('data-' + lang + '-placeholder');
+      if (ph) el.placeholder = ph;
+    });
+  }
+
+  // 默认中文
+  setLang('zh');
+</script>
 
 </body>
 </html>
