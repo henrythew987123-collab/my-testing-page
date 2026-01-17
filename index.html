@@ -22,19 +22,6 @@
       gap: 40px;
       align-items: center;
       padding: 60px 0;
-    .form-wrapper {
-    background: #ffffff;
-    padding: 28px;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.08);
-  }
-
-  .form-sub {
-    color: #555;
-    font-size: 14px;
-    margin-bottom: 16px;
-  }
-</style>
     }
     h1 {
       font-size: 40px;
@@ -97,25 +84,29 @@
 </head>
 <body>
 
-<div class="form-wrapper">
-  <h3>获取专属房源清单</h3>
-  <p class="form-sub">
-    填写资料后，我会根据你的预算与需求，  
-    私下发送适合你的房源建议。
-  </p>
-      
-<h3>获取专属房源清单</h3>
+<div class="container">
 
-<iframe
-  src="https://docs.google.com/forms/d/e/1FAIpQLSfavOjVSK8FN3W9dq5miRwcVgWtUwHp96piD_I2dKpN7KPx1w/viewform?embedded=true"
-  width="100%"
-  height="520"
-  frameborder="0"
-  marginheight="0"
-  marginwidth="0">
-加载中…
-</iframe>
+  <header>
+    <div>
+      <h1>帮你找到真正适合你的房子</h1>
+      <p>
+        无论是首次购房、自住升级，还是房产投资，我都会根据你的预算与需求，
+        提供清晰、透明、专业的建议。
+      </p>
+    </div>
 
+    <div class="form-box">
+      <h3>获取专属房源清单</h3>
+      <form>
+        <input type="text" placeholder="姓名" required>
+        <input type="tel" placeholder="联系电话" required>
+        <input type="email" placeholder="Email（可选）">
+        <textarea rows="3" placeholder="你正在找什么类型的房子？"></textarea>
+        <button type="submit">提交客户名单</button>
+        <p style="font-size:12px;color:#777;margin-top:10px;">
+          我们尊重您的隐私，客户资料仅用于房产联系。
+        </p>
+      </form>
     </div>
   </header>
 
@@ -153,9 +144,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
